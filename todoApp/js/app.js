@@ -2,24 +2,29 @@ let btn = document.querySelector('.button')
 let p = document.getElementById('asd')
 let content= document.querySelector('.content')
 let ins = document.querySelector('.input')
-p.innerHTML='No Task'
+p.innerHTML='Add Task'
 
 btn.onclick = () => {
-  if(ins == ''){
-    ins.innerHTML='yazi yazin'
-  }
     let inp = ins.value 
     let h2 = document.createElement('h4')
     let btn1 = document.createElement('button')
     let div = document.createElement('div')
-    h2.innerHTML=inp
-    h2.style.color = 'white'
-    content.style.padding = '10px 0px'
-    div.append(h2,btn1)
-    document.querySelector('.content').appendChild(div)
-    div.className='miri'
-    btn1.className='btn1'
-    btn1.innerHTML='Del'
+    if(ins.value == ''){
+    }else{
+      h2.innerHTML=inp
+      h2.style.color = 'white'
+      content.style.padding = '10px 0px'
+      div.append(h2,btn1)
+      content.appendChild(div)
+      div.className='miri'
+      btn1.className='btn1'
+      btn1.innerHTML='Del'
+      setTimeout(() => {
+        ins.value = ''
+      }, 0);
+    }
+    
+   
    let btns = document.querySelectorAll('.btn1')
    for (let btn3 of btns){
     btn3.onclick=()=>{
